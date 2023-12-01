@@ -16,13 +16,17 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	defer func() {
-		_ = f.Close()
-	}()
-	//scanner1 := bufio.NewScanner(f)
-	scanner2 := bufio.NewScanner(f)
-	//part1(scanner1)
-	part2(scanner2)
+	scanner := bufio.NewScanner(f)
+	part1(scanner)
+	_ = f.Close()
+
+	f, err = os.Open("./day1/input")
+	if err != nil {
+		panic(err)
+	}
+	scanner = bufio.NewScanner(f)
+	part2(scanner)
+	_ = f.Close()
 }
 
 type dataset struct {
