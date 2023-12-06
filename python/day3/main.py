@@ -34,3 +34,9 @@ for i in range(len(matrix)):
             gears = set()
 
 print(p1)
+
+p2 = 0
+for k, v in nums.items():
+    if len(v) == 2:
+        p2 += v[0] * v[1]
+print(p2)
